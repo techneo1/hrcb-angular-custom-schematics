@@ -1,0 +1,10 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "hrcb-feature-generator": {
+      "description": "A blank schematic.",
+      "factory": "./hrcb-feature-generator/index#hrcbFeatureGenerator",
+      "schema": "./hrcb-feature-generator/schema.json"
+    }
+  }
+}
