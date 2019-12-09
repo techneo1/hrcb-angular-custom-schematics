@@ -1,28 +1,36 @@
-# Getting Started With Schematics
+# hrcb feature generator - Custom Angular Schematics for increased productivity
 
-This repository is a basic Schematic implementation that serves as a starting point to create and publish Schematics to NPM.
+### Creating Features
 
-### Testing
+Follow the below commands to create a feature named "Expense policy", which is a feature module including module, routing module, service, specs and components to list, add, edit, delete and view under the folder "src/app/feeditems".
 
-To test locally, install `@angular-devkit/schematics-cli` globally and use the `schematics` command line tool. That tool acts the same as the `generate` command of the Angular CLI, but also has a debug mode.
-
-Check the documentation with
-```bash
-schematics --help
+```
+cd "Path to Angular project"
+$ schematics @schematics/hrcb-feature-generator:hrcb-feature-generator --path="src/app/feeditems" --name="expense policy"
 ```
 
-### Unit Testing
+You should see the following files to be created when running this schematic:
 
-`npm run test` will run the unit tests, using Jasmine as a runner and test framework.
-
-### Publishing
-
-To publish, simply do:
-
-```bash
-npm run build
-npm publish
 ```
 
-That's it!
- 
+CREATE /src/app/feeditems/expense-policy/expense-policy-routing.module.ts (635 bytes)
+CREATE /src/app/feeditems/expense-policy/expense-policy.model.ts (0 bytes)
+CREATE /src/app/feeditems/expense-policy/expense-policy.module.ts (1489 bytes)
+CREATE /src/app/feeditems/expense-policy/expense-policy.service.spec.ts (1060 bytes)
+CREATE /src/app/feeditems/expense-policy/expense-policy.service.ts (1737 bytes)
+CREATE /src/app/feeditems/expense-policy/add-expense-policy/add-expense-policy.component.html (0 bytes)
+CREATE /src/app/feeditems/expense-policy/add-expense-policy/add-expense-policy.component.spec.ts (1373 bytes)
+CREATE /src/app/feeditems/expense-policy/add-expense-policy/add-expense-policy.component.ts (3314 bytes)
+CREATE /src/app/feeditems/expense-policy/delete-expense-policy/delete-expense-policy.component.html (0 bytes)
+CREATE /src/app/feeditems/expense-policy/delete-expense-policy/delete-expense-policy.component.spec.ts (1541 bytes)
+CREATE /src/app/feeditems/expense-policy/delete-expense-policy/delete-expense-policy.component.ts (3085 bytes)
+CREATE /src/app/feeditems/expense-policy/edit-expense-policy/edit-expense-policy.component.html (0 bytes)
+CREATE /src/app/feeditems/expense-policy/edit-expense-policy/edit-expense-policy.component.spec.ts (1256 bytes)
+CREATE /src/app/feeditems/expense-policy/edit-expense-policy/edit-expense-policy.component.ts (3829 bytes)
+CREATE /src/app/feeditems/expense-policy/view-expense-policy/view-expense-policy.component.html (0 bytes)
+CREATE /src/app/feeditems/expense-policy/view-expense-policy/view-expense-policy.component.spec.ts (2010 bytes)
+CREATE /src/app/feeditems/expense-policy/view-expense-policy/view-expense-policy.component.ts (3782 bytes)
+CREATE /src/app/feeditems/expense-policy/expense-policy-list/expense-policy-list.component.html (981 bytes)
+CREATE /src/app/feeditems/expense-policy/expense-policy-list/expense-policy-list.component.spec.ts (2950 bytes)
+CREATE /src/app/feeditems/expense-policy/expense-policy-list/expense-policy-list.component.ts (2037 bytes)
+```

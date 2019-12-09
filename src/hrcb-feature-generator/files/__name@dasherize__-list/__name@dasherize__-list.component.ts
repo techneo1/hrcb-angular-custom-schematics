@@ -60,7 +60,6 @@ export class <%= classify(name) %>ListComponent extends BaseComponent implements
     }
 
     private setListDetails(): void {
-        this.detectNewChanges();
     }
 
     private setTableHeader() {}

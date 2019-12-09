@@ -1,7 +1,7 @@
 {
-  "name": "@schematics/hrcb-feature-generator",
+  "name": "@schematics/hrcb-angular-feature-generator",
   "version": "1.0.0",
-  "description": "Custom schematics for generating HRCB features",
+  "description": "Productivity tool for quickly generating HRCB angular features",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "npm run build && jasmine src/**/*_spec.js"
