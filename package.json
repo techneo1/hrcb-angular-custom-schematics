@@ -9,7 +9,7 @@
   "keywords": [
     "schematics"
   ],
-  "author": "",
+  "author": "Srikanth Shet",
   "license": "MIT",
   "schematics": "./src/collection.json",
   "dependencies": {
