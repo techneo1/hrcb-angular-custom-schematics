@@ -7,7 +7,14 @@
     "test": "npm run build && jasmine src/**/*_spec.js"
   },
   "keywords": [
-    "schematics"
+    "angular",
+    "schematics",
+    "productivity",
+    "folder structure",
+    "feature",
+    "architecture",
+    "consistency",
+    "best practices"
   ],
   "author": "Srikanth Shet",
   "license": "MIT",
