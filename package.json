@@ -27,5 +27,15 @@
     "@types/node": "^12.12.15",
     "jasmine": "^3.5.0",
     "typescript": "^3.7.3"
-  }
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techneo1/hrcb-schematics-angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/techneo1/hrcb-schematics-angular/issues"
+  },
+  "homepage": "https://github.com/techneo1/hrcb-schematics-angular#readme"
 }
