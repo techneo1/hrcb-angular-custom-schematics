@@ -1,5 +1,5 @@
 {
-  "name": "@hrcb/angular-feature-generator",
+  "name": "@hrcb/schematics-angular",
   "version": "1.0.0",
   "description": "Productivity tool for quickly generating HRCB angular features",
   "scripts": {
