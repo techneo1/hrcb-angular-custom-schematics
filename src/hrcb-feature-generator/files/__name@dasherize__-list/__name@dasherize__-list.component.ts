@@ -5,15 +5,21 @@ import { HeaderService } from "@app/core/layout/header/header.service";
 import { TranslationService } from "@app/core/services/translation/translation.service";
 import { PermissionService } from "@core/services/permission/permission.service";
 import { TranslateService } from "@ngx-translate/core";
+import { NotificationModes } from "@zoomui/notification";
 import { ZoomDataSource } from "@zoomui/table";
 import { SubSink } from "subsink";
 
 @Component({
-    selector: 'hrcb-<%= name %>',
-    templateUrl: './<%= name %>.component.html',
+    selector: 'hrcb-<%= dasherize(name) %>-list',
+    templateUrl: './<%= dasherize(name) %>-list.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class <%= classify(name) %>ListComponent extends BaseComponent implements OnInit, OnDestroy {
+    showAddDialog = false;
+    successMessage: string;
+    notificationMode: string;
+    translatedAddButtonText: string;
+
     private subs = new SubSink();
 
     constructor(
@@ -31,7 +37,10 @@ export class <%= classify(name) %>ListComponent extends BaseComponent implements
 
     setPageHeader() {}
 
-    setNotifications() {}
+    setNotifications() {
+        this.notificationMode = NotificationModes.success;
+        this.successMessage = window.history.state.data;
+    }
 
     getAll<%= classify(name) %>Items() {}
 
@@ -40,6 +49,20 @@ export class <%= classify(name) %>ListComponent extends BaseComponent implements
     }
 
     goToView(row: ZoomDataSource) {}
+
+    add() {
+        this.showAddDialog = true;
+        this.successMessage = "";
+    }
+
+    onAddSuccess($event) {
+        this.showAddDialog = false;
+        this.successMessage = $event;
+    }
+
+    onAddDialogClose() {
+        this.showAddDialog = false;
+    }
 
     detectNewChanges() {
         this.changeDetectorRef.detectChanges();

@@ -1,0 +1,60 @@
+<zoom-notification
+  *ngIf="successMessage"
+  raetId="ViewSuccess"
+  [mode]="successMode"
+  [isClosable]="true"
+>
+  <div class="notificationDiv" attr.data-raet-id="ViewSuccessMsg">
+    {{ this.successMessage }}
+  </div>
+</zoom-notification>
+
+<zoom-notification
+  *ngIf="errorMessage"
+  raetId="ViewError"
+  [mode]="alertMode"
+  [isClosable]="true"
+>
+  <div class="notificationDiv" attr.data-raet-id="ViewErrorMsg">
+    {{ this.errorMessage }}
+  </div>
+</zoom-notification>
+
+<header class="section-header" attr.data-raet-id="ViewCardHeader">
+  <h1 class="section-header__title" attr.data-raet-id="ViewCardTitle">
+    {{ translatedSectionHeaderTitle }}
+    ({{ defaultLanguage }})
+  </h1>
+  <zoom-button raetId="ViewEdit" type="button" (actionEvent)="edit()">
+    {{ "yfo.common.Edit" | translate }}
+  </zoom-button>
+</header>
+
+<header class="section-header" attr.data-raet-id="ViewDeleteHeader">
+  <h1 class="section-header__title" attr.data-raet-id="ViewDeleteCardTitle">
+    {{ translatedSectionDeleteHeaderTitle }}
+  </h1>
+</header>
+<div class="section-body">
+  <div>
+    <p>{{ translatedDeleteCompanyMessage }}</p>
+  </div>
+</div>
+<section class="section-footer">
+  <zoom-button raetId="ViewDelete" type="button" (actionEvent)="delete()">
+    {{ "yfo.edmodm.Delete" | translate }}
+  </zoom-button>
+</section>
+
+<!-- 
+TODO: Action required
+
+  <hrcb-edit-<%= dasherize(name) %>
+  *ngIf="showEditDialog"
+></hrcb-edit-<%= dasherize(name) %>>
+
+<hrcb-delete-<%= dasherize(name) %>
+  *ngIf="showDeleteDialog"
+></hrcb-delete-<%= dasherize(name) %>> 
+
+-->

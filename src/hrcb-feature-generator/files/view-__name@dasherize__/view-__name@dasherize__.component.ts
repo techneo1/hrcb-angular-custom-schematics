@@ -21,8 +21,8 @@ import { SubSink } from "subsink";
 import { ZoomSelectOption } from "../../language-translation/language-translation.model";
 
 @Component({
-  selector: 'hrcb-<%= name %>',
-  templateUrl: './<%= name %>.component.html',
+  selector: 'hrcb-view-<%= dasherize(name) %>',
+  templateUrl: './view-<%= dasherize(name) %>.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class View<%= classify(name) %>Component extends BaseComponent
@@ -35,11 +35,16 @@ export class View<%= classify(name) %>Component extends BaseComponent
   showEditDialog = false;
   showDeleteDialog = false;
 
+  successMode: string;
+  alertMode: string;
   successMessage: string;
   errorMessage: string;
 
   languages: ZoomSelectOption[];
   defaultLanguage: string;
+  translatedSectionHeaderTitle: string;
+  translatedSectionDeleteHeaderTitle: string;
+  translatedDeleteCompanyMessage: string;
 
   constructor(
     private permissionService: PermissionService,

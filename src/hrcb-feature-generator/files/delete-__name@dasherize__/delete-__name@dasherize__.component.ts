@@ -23,8 +23,8 @@ import { NotificationModes } from "@zoomui/notification";
 import { SubSink } from "subsink";
 
 @Component({
-    selector: 'hrcb-<%= name %>',
-    templateUrl: './<%= name %>.component.html',
+    selector: 'hrcb-delete-<%= dasherize(name) %>',
+    templateUrl: './delete-<%= dasherize(name) %>.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Delete<%= classify(name) %>Component extends BaseComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -33,19 +33,19 @@ export class Delete<%= classify(name) %>Component extends BaseComponent implemen
     @Input() <%= classify(name) %>: SystemSetting;
     @Input() raetId: string;
 
-    private subs = new SubSink();
-
+    isOpened = true;
     notificationMode: string;
     errorMessage = "";
     deleteForm: FormGroup;
     dialogConfirmButton: ZoomButtonComponent;
 
+    private subs = new SubSink();
+
     constructor(
         private notificationService: NotificationService,
-        private <%= classify(name) %>Service: <%= classify(name) %>Service,
         private router: Router,
         private changeDetectorRef: ChangeDetectorRef,
-        private translationService: TranslationService,
+        public translationService: TranslationService,
         public translate: TranslateService
     ) {
         super(translationService, translate);
@@ -81,10 +81,6 @@ export class Delete<%= classify(name) %>Component extends BaseComponent implemen
 
     ngAfterViewInit() {
         const allButtonsInTheTemplate: ZoomButtonComponent[] = this.buttons.toArray();
-        this.dialogConfirmButton = this.<%= classify(name) %>Service.getComponentByRaetId(
-            allButtonsInTheTemplate,
-            "DeleteConfirm"
-        );
     }
 
     ngOnDestroy() {

@@ -1,0 +1,28 @@
+<zoom-notification
+  *ngIf="successMessage"
+  raetId="ListSuccessNotification"
+  [mode]="notificationMode"
+  [isClosable]="true"
+>
+  <span attr.data-raet-id="NotificationText">
+    {{ successMessage }}
+  </span>
+</zoom-notification>
+
+<header class="section-header" attr.data-raet-id="Header">
+  <h1 class="section-header__title" attr.data-raet-id="Title">
+    {{ "yfo.edmodm.XYZ" | translate }}
+  </h1>
+
+  <div>
+    <zoom-button raetId="ListAddButton" type="button" (actionEvent)="add()">
+      {{ translatedAddButtonText }}
+    </zoom-button>
+  </div>
+</header>
+<!-- 
+<hrcb-table-with-pagination
+></hrcb-table-with-pagination> -->
+
+<!-- <hrcb-add-<%= dasherize(name) %>
+></hrcb-add-<%= dasherize(name) %>> -->

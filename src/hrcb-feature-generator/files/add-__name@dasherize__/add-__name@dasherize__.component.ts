@@ -20,8 +20,8 @@ import { NotificationModes } from "@zoomui/notification";
 import { SubSink } from "subsink";
 
 @Component({
-  selector: 'hrcb-<%= name %>',
-  templateUrl: './<%= name %>.component.html',
+  selector: 'hrcb-add-<%= dasherize(name) %>',
+    templateUrl: './add-<%= dasherize(name) %>.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Add<%= classify(name) %>Component extends BaseComponent
@@ -31,11 +31,14 @@ export class Add<%= classify(name) %>Component extends BaseComponent
   @Output() close = new EventEmitter();
   @Output() success = new EventEmitter<string>();
 
+  isOpened = true;
   dialogConfirmButton: ZoomButtonComponent;
   addForm: FormGroup;
   showConfirmationDialog: boolean = false;
   notificationMode: string;
   errorMessage: string;
+  translatedDialogHeader: string;
+  translatedSectionHeaderTitle: string;
 
   private subs = new SubSink();
 
@@ -128,7 +131,9 @@ export class Add<%= classify(name) %>Component extends BaseComponent
     this.getTranslatedTexts();
   }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+    const allButtonsInTheTemplate: ZoomButtonComponent[] = this.buttons.toArray();
+  }
 
   ngOnDestroy() {
     this.errorMessage = "";

@@ -6,6 +6,8 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { TranslateModule } from "@ngx-translate/core";
 import { ZoomFormModule } from "@zoomui/form";
 import { MockComponents } from "ng-mocks";
+import { Delete<%= classify(name) %>Component } from './delete-<%= dasherize(name) %>.component';
+import { <%= classify(name) %>Service } from '../<%= dasherize(name) %>.service';
 
 describe("Delete<%= classify(name) %>Component", () => {
     let component: Delete<%= classify(name) %>Component;
@@ -13,6 +15,10 @@ describe("Delete<%= classify(name) %>Component", () => {
 
     const zoomDependencies = [];
     const componentDependencies = [];
+
+    const router = {
+        navigate: jasmine.createSpy("navigate")
+    };
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({

@@ -2,6 +2,7 @@ import { HttpClientTestingModule, HttpTestingController } from "@angular/common/
 import { TestBed } from "@angular/core/testing";
 import { AppConfigurationService } from "@app/core/services/configuration/app-configuration.service";
 import { MockAppConfigurationService } from "@app/core/services/configuration/mock-app-configuration.service";
+import { <%= classify(name) %>Service } from './<%= dasherize(name) %>.service';
 
 describe("<%= classify(name) %>Service", () => {
     let backend: HttpTestingController;

@@ -1,0 +1,54 @@
+<zoom-dialog
+  [isOpen]="isOpened"
+  (closed)="onDeleteCancel()"
+  raetId="DeleteDialog"
+>
+  <ng-container zoom-dialog-header>
+    <h1></h1>
+  </ng-container>
+
+  <ng-container zoom-dialog-body>
+    <zoom-notification
+      *ngIf="errorMessage"
+      raetId="DeleteError"
+      [mode]="notificationMode"
+      [isClosable]="true"
+    >
+      <div class="notificationDiv" attr.data-raet-id="DeleteErrorMsg">
+        {{ this.errorMessage }}
+      </div>
+    </zoom-notification>
+    <div class="section-header">
+      <h2 class="section-header__title" data-raet-id="CardTitle">
+        {{ "yfo.edmodm.Confirmation" | translate }}
+      </h2>
+    </div>
+
+    <form [formGroup]="deleteForm" novalidate zoomForm>
+      <section class="section-body">
+        <h3 data-raet-id="CardText">
+          {{ "yfo.edmodm.ToBeDeleted" | translate }}
+        </h3>
+      </section>
+      <section class="section-footer">
+        <zoom-button
+          raetId="DeleteConfirm"
+          [type]="'button'"
+          [isDisabled]="!this.deleteForm.valid"
+          (actionEvent)="onDeleteConfirm()"
+        >
+          {{ "yfo.edmodm.Confirm" | translate }}
+        </zoom-button>
+
+        <zoom-button
+          mode="secondary"
+          raetId="DeleteCancel"
+          class="button-secondary"
+          [type]="'link'"
+          (actionEvent)="onDeleteCancel()"
+          >{{ "Cancel" | translate }}</zoom-button
+        >
+      </section>
+    </form>
+  </ng-container>
+</zoom-dialog>

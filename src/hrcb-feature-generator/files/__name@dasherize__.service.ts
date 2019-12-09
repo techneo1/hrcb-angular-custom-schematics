@@ -3,6 +3,8 @@ import { Injectable } from "@angular/core";
 import { AppConfigurationService } from "@core/services/configuration/app-configuration.service";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { <%= classify(name) %>, <%= classify(name) %>Dto } from "./<%= dasherize(name) %>.model";
+import { <%= classify(name) %>Adapter } from "./<%= dasherize(name) %>.adapter";
 
 @Injectable({
     providedIn: "root"
@@ -14,6 +16,7 @@ export class <%= classify(name) %>Service {
 
     constructor(
         private http: HttpClient,
+        private adapter: <%= classify(name) %>Adapter,
         private appConfigService: AppConfigurationService,
     ) {
         this.apiUri = "api/" + this.entityUrl;

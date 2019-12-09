@@ -5,6 +5,8 @@ import { TranslateModule } from "@ngx-translate/core";
 import { ZoomFormModule } from "@zoomui/form";
 import { MockComponents } from "ng-mocks";
 import { defer } from "rxjs";
+import { Add<%= classify(name) %>Component } from './add-<%= dasherize(name) %>.component';
+import { <%= classify(name) %>Service } from '../<%= dasherize(name) %>.service';
 
 export function asyncError<T>(errorObject: any) {
   return defer(() => Promise.reject(errorObject));

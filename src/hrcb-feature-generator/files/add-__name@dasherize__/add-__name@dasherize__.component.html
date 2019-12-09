@@ -1,0 +1,31 @@
+<zoom-dialog [isOpen]="isOpened" (closed)="onAddClose()" raetId="AddDialog">
+  <ng-container zoom-dialog-header>
+    <h1>
+      {{ translatedDialogHeader }}
+    </h1>
+  </ng-container>
+
+  <ng-container zoom-dialog-body>
+    <zoom-notification
+      *ngIf="errorMessage"
+      [mode]="notificationMode"
+      [isClosable]="true"
+      raetId="AddErrorNotification"
+    >
+      <span attr.data-raet-id="NotificationText">
+        {{ errorMessage }}
+      </span>
+    </zoom-notification>
+
+    <div class="section-header">
+      <h2 class="section-header__title" data-raet-id="CardTitle">
+        {{ translatedSectionHeaderTitle }}
+      </h2>
+      <div class="section-header__options">
+        <span>{{ "yfo.edmodm.EqualsRequired" | translate }}</span>
+      </div>
+    </div>
+
+    <form [formGroup]="addForm" novalidate zoomForm></form>
+  </ng-container>
+</zoom-dialog>

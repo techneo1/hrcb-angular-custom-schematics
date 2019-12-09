@@ -4,6 +4,8 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { TranslateModule } from "@ngx-translate/core";
 import { ZoomFormModule } from "@zoomui/form";
 import { MockComponents } from "ng-mocks";
+import { Edit<%= classify(name) %>Component } from './edit-<%= dasherize(name) %>.component';
+import { <%= classify(name) %>Service } from '../<%= dasherize(name) %>.service';
 
 describe("Edit<%= classify(name) %>Component", () => {
     let component: Edit<%= classify(name) %>Component;

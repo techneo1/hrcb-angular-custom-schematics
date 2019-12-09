@@ -7,6 +7,7 @@ import { TranslateModule } from "@ngx-translate/core";
 import { OAuthModule } from "angular-oauth2-oidc";
 import { MockComponents, MockPipes } from "ng-mocks";
 import { LanguageTranslationService } from "../../language-translation/language-translation.service";
+import { View<%= classify(name) %>Component } from './view-<%= dasherize(name) %>.component';
 
 describe("View<%= classify(name) %>Component", () => {
     let fixture: ComponentFixture<View<%= classify(name) %>Component>;

@@ -1,0 +1,72 @@
+<zoom-dialog [isOpen]="isOpened" (closed)="onEditClose()" raetId="EditDialog">
+  <ng-container zoom-dialog-header>
+    <h2 class="card__title">{{ "yfo.edmodm.Change" | translate }}</h2>
+  </ng-container>
+
+  <h2 class="card__title" data-raet-id="CardTitle">
+    {{ translatedSectionHeaderTitle }}
+  </h2>
+
+  <ng-container zoom-dialog-body>
+    <zoom-notification
+      *ngIf="errorMessage"
+      [mode]="notificationMode"
+      [isClosable]="true"
+      raetId="EditErrorNotification"
+    >
+      <span attr.data-raet-id="NotificationText">
+        {{ this.errorMessage }}
+      </span>
+    </zoom-notification>
+
+    <div class="section-header">
+      <h2 class="section-header__title" data-raet-id="CardTitle">
+        {{ translatedSectionHeaderTitle }}
+      </h2>
+      <div class="section-header__options">
+        <span>{{ "yfo.edmodm.EqualsRequired" | translate }}</span>
+      </div>
+    </div>
+
+    <form [formGroup]="editForm" novalidate zoomForm>
+      <section class="section-footer">
+        <zoom-button
+          raetId="EditDialogConfirmButton"
+          [type]="'button'"
+          [isDisabled]="!areFieldsEmpty()"
+          (actionEvent)="onEditConfirm()"
+          >{{ "Save" | translate }}
+        </zoom-button>
+
+        <zoom-button
+          raetId="EditDialogCancelButton"
+          mode="secondary"
+          class="button-secondary"
+          [type]="'button'"
+          (actionEvent)="onEditCancel()"
+          >{{ "Cancel" | translate }}
+        </zoom-button>
+      </section>
+
+      <zoom-confirmation
+        *ngIf="showConfirmationDialog"
+        [isOpen]="showConfirmationDialog"
+        (closed)="onCloseConfirmationDialog($event)"
+        raetId="EditConfirmationDialog"
+      >
+        <ng-container zoom-confirmation-title>
+          {{ "yfo.edmodm.LeaveWithoutSaving" | translate }}
+        </ng-container>
+        <ng-container zoom-confirmation-content>
+          <strong>{{ "yfo.edmodm.ProgressWillBeLost" | translate }}</strong>
+        </ng-container>
+        <ng-container zoom-confirmation-cancel>
+          {{ "Cancel" | translate }}
+        </ng-container>
+        <ng-container zoom-confirmation-confirm>
+          {{ "yfo.edmodm.Ok" | translate }}
+        </ng-container>
+      </zoom-confirmation>
+    </form>
+  </ng-container>
+</zoom-dialog>

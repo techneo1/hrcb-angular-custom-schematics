@@ -1,17 +1,5 @@
-import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-  QueryList,
-  ViewChild,
-  ViewChildren
-} from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output, QueryList, ViewChild, ViewChildren } from "@angular/core";
+import { FormGroup } from '@angular/forms';
 import { BaseComponent } from "@app/core/base/base.component";
 import { TranslationService } from "@app/core/services/translation/translation.service";
 import { EditFieldTranslationComponent } from "@feeditems/system-settings/language-translation/edit-field-translation/edit-field-translation.component";
@@ -23,8 +11,8 @@ import { NotificationModes } from "@zoomui/notification";
 import { SubSink } from "subsink";
 
 @Component({
-    selector: 'hrcb-<%= name %>',
-    templateUrl: './<%= name %>.component.html',
+    selector: 'hrcb-edit-<%= dasherize(name) %>',
+    templateUrl: './edit-<%= dasherize(name) %>.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Edit<%= classify(name) %>Component extends BaseComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -37,6 +25,15 @@ export class Edit<%= classify(name) %>Component extends BaseComponent implements
   @Input() translations: Culture[];
   @Input() languages: ZoomSelectOption[];
   @Input() raetId: string;
+
+  isOpened = true;
+  dialogConfirmButton: ZoomButtonComponent;
+  hasTranslationsChanged = false;
+  showConfirmationDialog = false;
+  editForm: FormGroup;
+  notificationMode: string;
+  errorMessage: string = "";
+  translatedSectionHeaderTitle: string;
 
   private subs = new SubSink();
 
@@ -111,10 +108,6 @@ export class Edit<%= classify(name) %>Component extends BaseComponent implements
 
   ngAfterViewInit() {
       const allButtonsInTheTemplate: ZoomButtonComponent[] = this.buttons.toArray();
-      this.dialogConfirmButton = this.<%= classify(name) %>Service.getComponentByRaetId(
-          allButtonsInTheTemplate,
-          "EditDialogConfirmButton"
-      );
   }
 
   areFieldsEmpty(): boolean {

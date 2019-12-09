@@ -2,7 +2,7 @@
 
 ### Creating Features
 
-Follow the below commands to create a feature named "Expense policy", which is a feature module including module, routing module, service, specs and components to list, add, edit, delete and view under the folder "src/app/feeditems".
+Follow the below command to create a feature named "Expense policy", which is a feature module including module, routing module, service, and components to list, add, edit, delete and view under the folder "src/app/feeditems".
 
 ```
 cd "Path to Angular project"

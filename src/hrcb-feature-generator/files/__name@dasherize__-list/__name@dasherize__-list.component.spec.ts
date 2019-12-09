@@ -7,9 +7,9 @@ import { TableWithPaginationComponent } from "@app/shared/table-with-pagination/
 import { TranslateModule } from "@ngx-translate/core";
 import { OAuthModule } from "angular-oauth2-oidc";
 import { MockComponents } from "ng-mocks";
-import { Add<%= classify(name) %>Component } from "../add-<%= name %>/add-<%= name %>.component";
-import { <%= classify(name) %>Service } from "../<%= name %>.service";
-import { <%= classify(name) %>ListComponent } from "./<%= name %>-list.component";
+import { Add<%= classify(name) %>Component } from "../add-<%= dasherize(name) %>/add-<%= dasherize(name) %>.component";
+import { <%= classify(name) %>Service } from "../<%= dasherize(name) %>.service";
+import { <%= classify(name) %>ListComponent } from "./<%= dasherize(name) %>-list.component";
 
 describe("<%= classify(name) %>ListComponent", () => {
     let component: <%= classify(name) %>ListComponent;
