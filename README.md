@@ -30,7 +30,6 @@ You should see the following files to be created when running this schematic:
 This would create a feature module which includes a module, a routing module, a service, and components to list, add, edit, delete and view with predefined HRCB architecture template.
 
 ```
-
 CREATE /src/app/feeditems/expense-policy/expense-policy-routing.module.ts (635 bytes)
 CREATE /src/app/feeditems/expense-policy/expense-policy.model.ts (0 bytes)
 CREATE /src/app/feeditems/expense-policy/expense-policy.module.ts (1489 bytes)
