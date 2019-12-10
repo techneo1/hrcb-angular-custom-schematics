@@ -1,17 +1,18 @@
 {
   "name": "@hrcb/schematics-angular",
   "version": "1.0.0",
-  "description": "Productivity tool for quickly generating HRCB angular features",
+  "description": "Angular feature generation tooling for HRCB for better productivity, folder structure and code consistency",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "npm run build && jasmine src/**/*_spec.js"
   },
   "keywords": [
     "angular",
-    "schematics",
+    "scaffolding",
+    "tooling",
+    "code generation",
     "productivity",
     "folder structure",
-    "feature",
     "architecture",
     "consistency",
     "best practices"

@@ -1,8 +1,25 @@
-# hrcb feature generator - Custom Angular Schematics for increased productivity
+# Angular code generator for HRCB
+
+Angular feature generation tooling for HRCB for better productivity, folder structure and code consistency
+
+### Installation
+
+Install `schematics-cli` globally.
+
+```
+$ npm install -g @angular-devkit/schematics-cli
+```
+
+Install `@hrcb/schematics-angular` as a dev dependency.
+
+```
+$ npm install --save-dev @hrcb/schematics-angular
+
+```
 
 ### Creating Features
 
-Follow the below command to create a feature named "Expense policy", which is a feature module including module, routing module, service, and components to list, add, edit, delete and view under the folder "src/app/feeditems".
+Follow the below command to create a feature named "Expense policy", a feature module which including module, routing module, service, and components to list, add, edit, delete and view under the folder "src/app/feeditems" with predefined architecture template.
 
 ```
 cd "Path to Angular project"
