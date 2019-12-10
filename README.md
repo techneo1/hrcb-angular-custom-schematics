@@ -19,7 +19,7 @@ $ npm install --save-dev @hrcb/schematics-angular
 
 ### Creating Features
 
-Follow the below command to create a feature named "Expense policy", a feature module which including module, routing module, service, and components to list, add, edit, delete and view under the folder "src/app/feeditems" with predefined architecture template.
+Follow below command for creating a feature named "Expense policy" under the folder "src/app/feeditems":
 
 ```
 cd "Path to Angular project"
@@ -27,6 +27,7 @@ $ schematics @schematics/hrcb-feature-generator:hrcb-feature-generator --path="s
 ```
 
 You should see the following files to be created when running this schematic:
+This would create a feature module which includes a module, a routing module, a service, and components to list, add, edit, delete and view with predefined HRCB architecture template.
 
 ```
 
